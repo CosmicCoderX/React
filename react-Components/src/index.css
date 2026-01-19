@@ -1,0 +1,258 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Body & HTML */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+/* ---------------- NAVBAR ---------------- */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover:not(.active) {
+  background-color: #111;
+}
+
+ul li a.active {
+  background-color: #04aa6d;
+}
+
+/* ---------------- CONTENT ---------------- */
+h1 {
+  margin-top: 80px; /* prevent navbar overlap */
+  margin-left: 10px;
+}
+
+h2,
+p {
+  margin: 10px;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+/* HERO SECTION */
+.hero-image {
+  height: 100vh; /* Full screen hero */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("./assets/coder.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 60px; /* navbar height */
+}
+
+/* HERO TEXT */
+.hero-text {
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.hero-text button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #04aa6d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #038c5a;
+}
+
+/* ---------------- CARDS SECTION ---------------- */
+
+.cards-section {
+  padding: 100px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.cards-title {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+/* Cards container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Card base */
+.card {
+  background-color: #1c1c1c;
+  width: 320px;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image placeholder */
+.card::before {
+  content: "";
+  display: block;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Individual card images */
+.card.frontend::before {
+  background-image: url("./assets/frontend.png");
+}
+
+.card.backend::before {
+  background-image: url("./assets/backend.jpg");
+}
+
+.card.problem::before {
+  background-image: url("./assets/problemSolving.webp");
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Card title */
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #04aa6d;
+}
+
+/* Card description */
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+  .cards-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+
+
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  background-color: #0b0b0b;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footer-content p {
+  margin: 6px 0;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.footer-socials {
+  margin: 20px 0;
+}
+
+.footer-socials a {
+  margin: 0 12px;
+  color: #04aa6d;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #666;
+}
